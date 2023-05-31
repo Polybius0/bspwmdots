@@ -1,0 +1,330 @@
+(defwidget power []
+  	(button 
+		:class "power-icon" 
+		:valign "center" 
+		:onclick "eww open-many --toggle background-closer powermenu" 
+		""
+	)
+)
+
+(defwidget workspaces []
+	(literal 
+		:content workspaces
+	)
+)
+
+(defwidget windowtitle []
+	(box 
+		:space-evenly false
+		(label 
+			:class "windowtitle" 
+			:text title 
+			:limit-width 20
+		)
+	)
+)
+
+(defwidget music [] 
+	(eventbox 
+		:onhover "eww update music-rev=true" 
+		:onhoverlost "eww update music-rev=false"
+		(box 
+			:space-evenly false 
+			:spacing 8
+			(button 
+				:class "musicbar-art" 
+				:onclick "eww open-many --toggle background-closer player" 
+				(label
+					:class "musicbar-title"
+					:text music-title
+					:limit-width 35 
+				)
+			)
+			(revealer 
+				:transition "slideright" 
+				:reveal music-rev 
+				:duration "500ms"
+				(box 
+					:spacing 10
+					(button 
+						:class "musicbar-previous-icon" 
+						:onclick "/scripts/mediacontrol --previous" 
+						"")
+					(button 
+						:class "musicbar-toggle-icon" 
+						:onclick "/scripts/mediacontrol --toggle" 
+						music-toggle)
+					(button 
+						:class "musicbar-next-icon" 
+						:onclick "/scripts/mediacontrol --next" 
+						""
+					)
+				)
+			)
+		)
+	)
+)
+
+(defwidget memory []
+	(box 
+		:class "memory" 
+		:space-evenly false 
+		:spacing 5
+		(circular-progress 
+			:value memory 
+			:class "memory-bar" 
+			:thickness 4
+			(label 
+				:class "memory-inside" 
+				:tooltip "${memorymb}MB used" 
+				:text ""
+			)
+		)
+		(label 
+			:class "memory-info" 
+			:text "${memory}%"
+		)
+	)
+)
+(defwidget cpu []
+	(box 
+		:class "cpu" 
+		:space-evenly false 
+		:spacing 5
+		(circular-progress 
+			:class "cpu-bar" 
+			:value cpu 
+			:thickness 4
+			(label 
+				:class "cpu-inside" 
+				:text ""
+			)
+		)
+		(label 
+			:class "cpu-info" 
+			:text "${cpu}%"
+		)
+	)
+)
+(defwidget battery []
+	(box 
+		:class "battery" 
+		:space-evenly false 
+		:spacing 5
+		(circular-progress 
+			:class "battery-bar" 
+			:value battery
+			:thickness 4
+			:style "color: ${battery-color}" 
+			(label 
+				:class "batt-inside" 
+				:tooltip "Battery at ${battery}%" 
+				:text ""
+			)
+		)
+		(label 
+			:class "batt-info" 
+			:text "${battery}%"
+		)
+	)
+)
+
+(defwidget pacman []
+	(eventbox 
+		:onhover "eww update pacman-rev=true" 
+		:onhoverlost "eww update pacman-rev=false" 
+		(box 
+			:space-evenly false
+			(button 
+				:class "pacman-icon" 
+				:onclick "scripts/popup updates"
+				:valign "center"
+				" "
+			)			
+			(revealer 
+				:transition "slideright" 
+				:reveal pacman-rev 
+				:duration "500ms"
+				(box 
+					:space-evenly false
+					(label 
+						:class "pacman-text" 
+						:text "${updates}"
+					)
+				)
+			)
+		)
+	)
+)
+
+(defwidget network []
+	(eventbox 
+		:onhover "eww update network-rev=true" 
+		:onhoverlost "eww update network-rev=false"
+		(box 
+			:space-evenly false			
+			(button 
+				:class "network-icon" 
+				:style "color: ${network-color}" 
+				"${network-icon}"
+			)
+			(revealer 
+				:transition "slideright" 
+				:reveal network-rev 
+				:duration "500ms"
+				(box 
+					:space-evenly false
+					(label 
+						:class "network-text" 
+						:text network-speed)
+				)
+			)
+		)
+	)
+)
+
+(defwidget volume []
+	(eventbox 
+		:onhover "eww update volume-rev=true" 
+		:onhoverlost "eww update volume-rev=false"
+		(box 
+			:space-evenly false
+			(button 
+				:class "volume-icon" 
+				:style "color: ${volume-color}" 
+				:tooltip "${volume-percent}%" 
+				:onclick "scripts/volume toggle" 
+				volume-icon
+			)
+			(revealer 
+				:class "volumebar-reveal" 
+				:transition "slideleft" 
+				:reveal volume-rev 
+				:duration "500ms"
+				(scale 
+					:class "volume-bar" 
+					:tooltip "${volume-percent}%"
+					:value volume-percent  
+					:min 0 
+					:max 101 
+					:onchange "pamixer -u && pamixer --set-volume {}"
+				)
+			)
+		)
+	)
+)
+
+(defwidget backlight[]
+	(eventbox 
+		:onhover "eww update light-rev=true" 
+		:onhoverlost "eww update light-rev=false"
+		(box 
+			:space-evenly false
+			(button 
+				:class "light-icon" 
+				backlight-icon
+			)
+			(revealer 
+				:class "light-reveal" 
+				:transition "slideleft" 
+				:reveal light-rev 
+				:duration "500ms"
+				(scale 
+					:class "light-bar" 
+					:value backlight-percent
+					:min 0 
+					:max 1500 
+					:onchange "brightnessctl s {}"
+				)
+			)
+		)
+	)
+)
+
+(defwidget clock []
+	(button 
+		:onclick "eww open-many --toggle background-closer calendar"
+		(box 
+			:class "clock" 
+			:space-evenly false 
+			:spacing 8
+			(label 
+				:class "clock-hour" 
+				:text hour
+			)
+			(label 
+				:class "clock-separator" 
+				:text ""
+			)
+			(label 
+				:class "clock-minute" 
+				:text minute
+			)
+		)
+	)
+)
+
+(defwidget group []
+	(box 
+		:class "group"
+		:space-evenly false  
+		:spacing 10
+		(pacman)
+		(network)
+		(volume)
+		(backlight)
+	)
+)
+
+(defwidget left []
+	(box 
+		:space-evenly false 
+		:halign "start" 
+		:spacing 15
+		(power)
+		(workspaces)
+		(windowtitle)
+	)
+)
+
+(defwidget center []
+	(box 
+		:space-evenly false 
+		:halign "center"
+		(music)
+	)
+)
+
+(defwidget right []
+	(box 
+		:space-evenly false 
+		:halign "end" 
+		:spacing 15
+		(battery)
+		(memory)
+		(cpu)
+		(group)
+		(clock)
+	)
+)
+
+(defwidget bar []
+	(box 
+		:class "bar"
+		(left)
+		(center)
+		(right)
+	)
+)
+
+(defwindow bar
+	:stacking "fg"
+	:wm-ignore false
+	:focusable false			   
+	:windowtype "dock"
+	:reserve (struts :distance "80px" :side "top")
+	:geometry (geometry :y "2%" 
+						:width "90%" 
+						:anchor "top center")
+	(bar)
+)

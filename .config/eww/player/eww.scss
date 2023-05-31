@@ -1,0 +1,96 @@
+* {
+	all: unset;
+}
+
+.player {
+	font-family: "SF Pro", "DroidSansM Nerd Font";
+	background-color: $bg;
+	padding: 10px;
+	min-height: 160px;
+	border-radius: 12px;
+}
+
+.player-art {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 16px;
+	min-width: 350px;
+	min-height: 180px;
+}
+
+.player-info {
+	border-radius: 12px;
+	background: linear-gradient(to right, rgb(25, 25, 25, 1), rgba(38, 38, 38, 0.5));
+	padding: 10px 10px 0px 10px;
+}
+
+.player-title {
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+.player-artist {
+	color: $white;
+	//padding-bottom: 42px
+}
+
+.player-bar scale trough highlight {
+	all: unset;
+    background-image: linear-gradient(to right, $cyan, $green);
+	border-radius: 24px;
+}
+.player-bar scale trough {
+	all: unset;
+	background-color: $gray;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+	border-radius: 24px;
+	min-height: 5px;
+	min-width: 325px;
+}
+
+.player-position {
+	color: $fg-alt;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+.player-controls {
+	background-color: $bg-alt;
+	padding: 10px;
+	margin-left: 10px;
+	border-radius: 12px;
+	min-width: 25px;
+}
+
+.player-toggle {
+	font-size: 30px;
+	color: $fg;
+}
+
+.player-previous,
+.player-next {
+	font-size: 25px;
+	color: $fg-alt;
+}
+
+.player-toggle:hover,
+.player-previous:hover,
+.player-next:hover {
+	color: $magenta;
+}
+
+.player-shuffle,
+.player-loop {
+	font-size: 16px;
+}
+
+.spotify-icon {
+	font-family: "Font Awesome 6 Brands";
+	font-size: 20px;
+	background-color: rgb(15, 15, 15, 0.6);
+	color: $green;
+	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.6);
+	border-radius: 120px;
+	margin-bottom: -5px;
+}

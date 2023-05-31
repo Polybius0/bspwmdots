@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+
+percent=$(acpi -b | grep -o '[0-9]*%' | sed 's/%//')
+
+get_color() {
+	if [[ $percent -ge 50 ]]; then
+		echo "#a9b665"
+	elif [[ $percent -ge 25 ]]; then
+		echo "#d8a657"
+	else 
+		echo "#ea6962"
+	fi
+}
+
+case "$1" in
+percent)
+	echo $percent
+	;;
+color)
+	get_color
+esac

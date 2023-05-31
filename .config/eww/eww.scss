@@ -1,0 +1,33 @@
+//Gobal Colors
+
+$bg: #141617;
+$bg-alt: #1d2021;
+$fg: #ebdbb2;
+$fg-alt: #ddc7a1;
+$black: #141617;
+$gray: #7c6f64;
+$red: #ea6962;
+$green: #a9b665;
+$yellow: #d8a657;
+$blue: #7daea3;
+$magenta: #d3869b;
+$cyan: #7daea3;
+$white: $fg;
+$transparent: rgba(0, 0, 0, 0);
+
+.background-closer {
+	background-color: $transparent;
+	color: $transparent;
+}
+
+tooltip {
+	background-color: $bg;
+	font-family: "DroidSansM Nerd Font";
+	font-weight: bold;
+	font-size: 14px;
+}
+
+@import "./bar/eww.scss";
+@import "./calendar/eww.scss";
+@import "./player/eww.scss";
+@import "./powermenu/eww.scss";

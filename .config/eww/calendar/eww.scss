@@ -1,0 +1,97 @@
+* {
+	all: unset;
+}
+
+.calendar-main-box {
+	background-color: $bg;
+	padding: 20px;
+}
+
+.time {
+	font-family: SF Mono;
+	font-weight: bolder;
+	font-size: 50px;
+	color: $fg;
+}
+
+.today {
+	font-family: SF Pro;
+	font-size: 25px;
+	color: $fg-alt;
+}
+
+.timeboxes {
+	font-size: 8px;
+
+	.magenta {
+		color: $magenta;
+	}
+
+	.green {
+		color: $green;
+	}
+
+	.yellow {
+		color: $yellow;
+	}
+}
+
+.weather-box {
+	padding: 0px 10px 0px 10px;
+}
+
+.weather-desc {
+	font-family: "SF Pro";
+	font-size: 20px;
+	color: $fg-alt;
+}
+
+.weather-temp {
+	font-family: "SF Pro";
+	font-size: 25px;
+	font-weight: bolder;
+	color: $fg;
+}
+
+.weather-icon {
+	font-family: "Font Awesome 6 Pro Solid";
+	font-size: 45px;
+}
+
+.cal {
+	font-size: 18px;
+	font-family: "SF Pro";
+	font-weight: 500;
+	background-color: $bg-alt;
+	border-radius: 12px;
+}
+
+.cal-inner-box {
+	padding: 10px 10px 0px 10px;
+}
+
+.calendar {
+	padding: 5px
+}
+
+.calendar:selected {
+	color: $green;
+}
+
+.calendar.header {
+	color: $green;
+	font-weight: bold;
+}
+
+.calendar.button {
+	color: $green;
+}
+
+.calendar.button:hover {
+	background-color: $black;
+	border-radius: 60px;
+}
+
+.calendar:indeterminate {
+	color: $gray;
+}

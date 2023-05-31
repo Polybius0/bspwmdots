@@ -1,0 +1,185 @@
+* {
+	all: unset;
+}
+
+.bar {
+	background-color: $bg;
+	padding: 5px 25px 5px 25px;
+}
+
+scale trough {
+	all: unset;
+	background-color: $black;
+	border-radius: 16px;
+	min-height: 5px;
+	min-width: 80px;
+	margin-left: 5px;
+	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.group {
+	background-color: $bg-alt;
+	padding: 8px 13px 8px 15px;
+	border-radius: 8px;
+}
+
+.power-icon,
+.pacman-icon,
+.network-icon,
+.volume-icon {
+	font-size: 18px;
+	font-family: "DroidSansM Nerd Font";
+}
+
+.pacman-text,
+.network-text,
+.memory-info,
+.cpu-info,
+.batt-info{
+	font-family: "DroidSansM Nerd Font";
+	font-size: 14px;
+	font-weight: bold;
+	color: $fg;
+}
+
+.power-icon {
+	color: $red;
+	padding-right: 2px;
+	margin-top: 2px;
+}
+
+.workspaces {
+	font-family: "DroidSansM Nerd Font";
+	font-size: 12px;
+	background-color: $bg-alt;
+	padding: 8px 15px 8px 15px;
+	border-radius: 8px;
+}
+
+.workspace-focused {
+	font-size: 15px;
+	color: $green;
+}
+
+.workspace-occupied {
+	color: $gray;
+}
+
+.workspace-empty {
+	color: $black;
+}
+
+.workspace-urgent {
+	color: $green;
+}
+
+.windowtitle {
+	font-family: "DroidSansM Nerd Font";
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.memory-inside,
+.cpu-inside,
+.batt-inside{
+	padding: 10px;
+}
+
+.memory-bar {
+	color: $magenta;
+	background-color: $black;
+}
+
+.cpu-bar {
+	color: $red;
+	background-color: $black;
+}
+//.battery-bar {
+//	color: $green;
+//	background-color: $black;
+//}
+
+.pacman-icon {
+	color: $yellow;
+}
+
+.pacman-text {
+	color: $fg;
+	margin-left: 5px;
+}
+
+.volume-bar trough highlight {
+	background: $green;
+	border-radius: 16px;
+}
+.light-bar trough highlight {
+	background: $yellow;
+	border-radius: 16px;
+}
+.light-icon {
+	color: $yellow;
+}
+
+.network-text {
+	color: $fg;
+	margin-left: 5px;
+}
+
+.clock {
+	font-family: "SF Mono";
+}
+
+.clock-hour {
+	font-size: 19px;
+	font-weight: bold;
+	color: $fg;
+}
+
+.clock-minute {
+	font-size: 19px;
+	color: $fg-alt;
+	margin-left: -1px;
+}
+
+.clock-separator {
+	font-size: 19px;
+	color: $fg-alt;
+	margin-top: 1px;
+}
+
+.musicbar-art {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-width: 35px;
+	border-radius: 100px;
+}
+
+.musicbar-title {
+	font-size: 15px;
+	font-weight: bold;
+	font-family: "SF Pro";
+	color: $fg;
+}
+
+.musicbar-toggle-icon {
+	font-size: 20px;
+}
+
+.musicbar-previous-icon,
+.musicbar-next-icon {
+	font-size: 15px;
+}
+
+.musicbar-previous-icon,
+.musicbar-next-icon,
+.musicbar-toggle-icon {
+	font-family: "DroidSansM Nerd Font";
+	color: $fg;
+}
+
+.musicbar-previous-icon:hover,
+.musicbar-next-icon:hover,
+.musicbar-toggle-icon:hover {
+	color: $magenta;
+}

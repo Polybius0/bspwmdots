@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+#Requires brightnessctl
+
+current=$(brightnessctl g) 
+light=$(echo "$current" | LC_ALL=C xargs /usr/bin/printf "%.*f\n" "0")
+
+get_icon() {
+	if [[ $light -ge 1125 ]]; then
+		echo "󰃠 "
+	elif [[ $light -ge 750 ]]; then
+		echo "󰃟 "
+	elif [[ $light -ge 375 ]]; then
+		echo "󰃝 "
+	else 
+		echo "󰃞 "
+	fi
+}
+
+case "$1" in 
+icon)
+	get_icon
+	;;
+brightness)
+	echo $light
+	;;
+esac
