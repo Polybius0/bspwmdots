@@ -1,0 +1,80 @@
+(defwidget title []
+	(label
+	:class "title"
+	:text "System"
+	)
+)
+(defwidget sys-info []
+	(box
+	:class "sys-info"
+	:orientation "v"
+
+	(box 
+		:class "memory" 
+		:space-evenly false 
+		:spacing 5
+		(label
+			:class "memory-info"
+			:text "RAM: "
+		)
+		(circular-progress 
+			:value memory 
+			:class "memory-bar" 
+			:thickness 6
+			(label 
+				:class "memory-inside" 
+				:tooltip "${memorymb}MB used" 
+				:text ""
+			)
+		)
+		(label 
+			:class "memory-info" 
+			:text "${memory}%"
+		)
+	)
+
+	(box 
+		:class "cpu" 
+		:space-evenly false 
+		:spacing 5
+		(label
+			:class "cpu-info"
+			:text "CPU: "
+		)
+		(circular-progress 
+			:class "cpu-bar" 
+			:value cpu 
+			:thickness 6
+			(label 
+				:class "cpu-inside" 
+				:text ""
+			)
+		)
+		(label 
+			:class "cpu-info" 
+			:text "${cpu}%"
+		)
+	)
+
+)
+)
+(defwidget sys []
+	(box
+	:class "sys"
+	:orientation "v"
+	:space-evenly "false"
+	(title)
+	(sys-info)
+	)
+
+)
+
+(defwindow systemmenu 
+	:stacking "fg"
+	:wm-ignore false
+	:windowtype "dock"
+	:geometry (geometry :x "-5%"
+	:y "7%"
+	:anchor "top right")
+	(sys)
+)

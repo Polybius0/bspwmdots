@@ -120,5 +120,7 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 # screenshot
-super + shift + s
+super + ctrl + s
 	maim -s ~/Pictures/Screenshots/$(date +%s).png
+super + shift + s
+	maim -s --format png /dev/stdout | xclip -selection clipboard -t image/png -i

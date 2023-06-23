@@ -4,7 +4,7 @@ $bg: #141617;
 $bg-alt: #1d2021;
 $fg: #ebdbb2;
 $fg-alt: #ddc7a1;
-$black: #141617;
+$black: #101111;
 $gray: #7c6f64;
 $red: #ea6962;
 $green: #a9b665;
@@ -31,3 +31,4 @@ tooltip {
 @import "./calendar/eww.scss";
 @import "./player/eww.scss";
 @import "./powermenu/eww.scss";
+@import "./systemmenu/eww.scss";

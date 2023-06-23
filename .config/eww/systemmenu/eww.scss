@@ -1,0 +1,43 @@
+.sys{
+	background-color: $bg;
+	padding: 15px;
+}
+
+.title{
+	font-size: 15px;
+	font-weight: bold;
+	font-family: "DroidSansM Nerd Font";
+	color: $fg;
+	padding: 5px;
+}
+
+.sys-info{
+	background-color: $bg-alt;
+	border-radius: 15px;
+}
+
+.cpu,
+.memory{
+	padding: 15px;
+}
+.memory-info,
+.cpu-info{
+	font-family: "DroidSansM Nerd Font";
+	font-size: 20px;
+	font-weight: bold;
+	color: $fg;
+}
+.memory-inside,
+.cpu-inside{
+	padding: 20px;
+}
+.memory-bar {
+	color: $magenta;
+	background-color: $bg;
+}
+
+.cpu-bar {
+	color: $red;
+	background-color: $bg;
+}
+

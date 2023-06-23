@@ -80,9 +80,10 @@
 (include "player/eww.yuck")
 (include "calendar/eww.yuck")
 (include "powermenu/eww.yuck")
+(include "systemmenu/eww.yuck")
 
 (defwidget closer []
-    (eventbox :onclick "eww close player calendar background-closer")
+    (eventbox :onclick "eww close player calendar systemmenu background-closer")
 )
   
 (defwindow background-closer

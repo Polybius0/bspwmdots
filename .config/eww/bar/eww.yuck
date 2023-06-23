@@ -107,27 +107,23 @@
 	)
 )
 (defwidget battery []
-	(box 
-		:class "battery" 
-		:space-evenly false 
-		:spacing 5
-		(circular-progress 
-			:class "battery-bar" 
-			:value battery
-			:thickness 4
-			:style "color: ${battery-color}" 
-			(label 
-				:class "batt-inside" 
-				:tooltip "Battery at ${battery}%" 
-				:text ""
-			)
-		)
-		(label 
-			:class "batt-info" 
-			:text "${battery}%"
-		)
+(box 
+:class "battery" 
+:orientation "h" 
+:spacing 10 
+:space-evenly "false" 
+:valign "center"
+:vexpand "false" 
+:hexpand "false" 
+	(label 
+		:class "battery-label" 
+		:text "${battery}%")
+
+	(scale :min 0 :max 100 
+		:value battery 
+		:active "false"
 	)
-)
+))
 
 (defwidget pacman []
 	(eventbox 
@@ -276,6 +272,15 @@
 	)
 )
 
+(defwidget sys-menu []
+  	(button 
+		:class "sys-icon" 
+		:valign "center" 
+		:onclick "eww open-many --toggle background-closer systemmenu" 
+		" "
+	)
+)
+
 (defwidget left []
 	(box 
 		:space-evenly false 
@@ -301,10 +306,9 @@
 		:halign "end" 
 		:spacing 15
 		(battery)
-		(memory)
-		(cpu)
 		(group)
 		(clock)
+		(sys-menu)
 	)
 )
 
@@ -322,8 +326,8 @@
 	:wm-ignore false
 	:focusable false			   
 	:windowtype "dock"
-	:reserve (struts :distance "80px" :side "top")
-	:geometry (geometry :y "2%" 
+	:reserve (struts :distance "70px" :side "top")
+	:geometry (geometry :y "1%" 
 						:width "90%" 
 						:anchor "top center")
 	(bar)

@@ -33,9 +33,7 @@ scale trough {
 
 .pacman-text,
 .network-text,
-.memory-info,
-.cpu-info,
-.batt-info{
+.battery{
 	font-family: "DroidSansM Nerd Font";
 	font-size: 14px;
 	font-weight: bold;
@@ -79,26 +77,19 @@ scale trough {
 	font-weight: 500;
 }
 
-.memory-inside,
-.cpu-inside,
-.batt-inside{
-	padding: 10px;
+.battery scale trough {
+	all: unset;
+	min-height: 8px;
+	min-width: 100px;
+	border-radius: 4px;
+	background-color: $bg-alt;
 }
 
-.memory-bar {
-	color: $magenta;
-	background-color: $black;
+.battery scale trough highlight {
+	all: unset;
+	border-radius: 4px;
+	background-color: $green;
 }
-
-.cpu-bar {
-	color: $red;
-	background-color: $black;
-}
-//.battery-bar {
-//	color: $green;
-//	background-color: $black;
-//}
-
 .pacman-icon {
 	color: $yellow;
 }
@@ -145,6 +136,10 @@ scale trough {
 	font-size: 19px;
 	color: $fg-alt;
 	margin-top: 1px;
+}
+
+.sys-icon {
+	color: $fg-alt;
 }
 
 .musicbar-art {
