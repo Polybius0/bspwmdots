@@ -38,7 +38,7 @@
 
 ;; Profile
 ;;profile image
-(defvar profile-image "assets/kobeni.jpg")
+(defvar profile-image "assets/rei.jpg")
 (defpoll profile-name :interval "24h" "scripts/details --name")
 (defpoll profile-os :interval "24h" "scripts/details --os")
 (defpoll profile-wm :interval "24h" "scripts/details --wm")

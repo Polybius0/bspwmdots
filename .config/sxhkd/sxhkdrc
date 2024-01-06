@@ -119,8 +119,20 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
 # screenshot
 super + ctrl + s
 	maim -s ~/Pictures/Screenshots/$(date +%s).png
 super + shift + s
 	maim -s --format png /dev/stdout | xclip -selection clipboard -t image/png -i
+
+# function keys
+
+ctrl + F7
+	pamixer -i 2
+
+ctrl + F6
+	pamixer -d 2
+
+ctrl + F5
+	pamixer --set-volume 0

@@ -117,7 +117,7 @@
 :hexpand "false" 
 	(label 
 		:class "battery-label" 
-		:text "${battery}%")
+		:text "${battery}% ")
 
 	(scale :min 0 :max 100 
 		:value battery 
@@ -322,13 +322,13 @@
 )
 
 (defwindow bar
-	:stacking "fg"
+	:stacking "bg"
 	:wm-ignore false
 	:focusable false			   
-	:windowtype "dock"
-	:reserve (struts :distance "70px" :side "top")
+	:windowtype "desktop"
+	:reserve (struts :distance "60px" :side "top")
 	:geometry (geometry :y "1%" 
-						:width "90%" 
-						:anchor "top center")
+			:width "90%" 
+			:anchor "top center")
 	(bar)
 )
